@@ -1,9 +1,11 @@
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
+x = np.linspace(-5,5,100)
+y = np.linspace(-5,5,100)
+X,Y = np.meshgrid(x,y)
+Z = X**2+Y**2
 fig = plt.figure()
 ax = plt.axes(projection='3d')
-Z = np.linspace(0,15,1000)
-X = np.sin(Z)
-Y = np.cos(Z)
-ax.plot3D(X,Y,Z,'red')
+ax.plot_surface(X,Y,Z)
 plt.show()
